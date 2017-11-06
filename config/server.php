@@ -19,8 +19,13 @@
  *
  */
 
+/** Function to define the protocol and base URL */
 function url(){
-    $protocol = 'https';
+    if (!empty (getenv('PROTOCOL'))) {
+        $protocol = getenv('PROTOCOL');
+    } else {
+        $protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https' : 'http';
+    }
 
     return sprintf(
         "%s://%s", $protocol, $_SERVER['HTTP_HOST']

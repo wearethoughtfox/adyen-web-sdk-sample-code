@@ -16,6 +16,10 @@
     },
     "CHECKOUT_API_KEY": {
       "description": "Your checkout API key"
+    },
+    "PROTOCOL": {
+      "description" : "Which protocol to add to the origin var / url generator function",
+      "value" : "https"
     }
   }
 }

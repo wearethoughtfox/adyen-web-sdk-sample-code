@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     var showHint = false;
 
-    // Create styling object for securedFields, for more information: https://docs.adyen.com/developers/checkout-javascript-sdk/styling-secured-fields
+    // Create styling object for securedFields, for more information: https://docs.adyen.com/developers/checkout-javascript-sdk/styling-input-fields
     var hostedFieldStyle = {
         base: {
             fontSize: '16px'
@@ -34,7 +34,6 @@ $(document).ready(function() {
     function initiateCheckout(jsonResponse) {
         var checkout = chckt.checkout(jsonResponse, '.checkout', hostedFieldStyle);
     }
-
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////// PERFORM SETUP CALL /////////////////////////////////////////
