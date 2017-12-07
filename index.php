@@ -31,7 +31,7 @@ include ('config/timezone.php');
     <meta name="robots" content="noindex"/>
     <title>Example PHP checkout</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://checkoutshopper-test.adyen.com/checkoutshopper/assets/js/sdk/checkoutSDK.1.0.0.min.js"></script>
+    <script type="text/javascript" src="https://checkoutshopper-test.adyen.com/checkoutshopper/assets/js/sdk/checkoutSDK.1.2.0.min.js"></script>
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body class="body">
@@ -41,6 +41,9 @@ include ('config/timezone.php');
         <p>
             <b>merchantAccount</b>= "YOUR MERCHANT ACCOUNT", more information in our <a href="https://docs.adyen.com/developers/get-started-with-adyen/create-a-test-account">Getting started guide</a>.<br/>
             <b>checkoutAPIkey</b>= "YOUR CHECKOUT API KEY".
+        </p>
+        <p>
+            For a full reference of the documentation, visit:  <a href="https://docs.adyen.com/developers/checkout/web-sdk">Checkout Web SDK</a>
         </p>
     </div>
 

@@ -21,7 +21,7 @@
 
 /**
  * Set up / edit your order on this page
- * For more information, refer to the checkout API documentation: https://docs.adyen.com/developers/in-app-integration/checkout-api-reference */
+ * For more information, refer to the checkout API documentation: https://docs.adyen.com/developers/checkout/api-reference-checkout */
 
 /** @int value - Put the value into minor units 120 = 1.20 (for USD), for decimal information per currency see: https://docs.adyen.com/developers/currency-codes */
 $value = 120;
@@ -41,10 +41,10 @@ $reference = 'order_id';
 /** @var $shopperReference - Your shopper reference (id or e-mail are commonly used) */
 $shopperReference = 'example_shopper';
 
-/** @var $shopperLocale - The shopper locale */
-$shopperLocale = 'en-US';
+/** @var $shopperLocale - The shopper locale : https://docs.adyen.com/developers/in-app-integration/checkout-api-reference/setup */
+$shopperLocale = 'en_US';
 
-/** @var $countryCode - The countrycode influences the returned payment methods */
+/** @var $countryCode - The countryCode influences the returned payment methods */
 $countryCode = 'NL';
 
 /** @var $channel - the channel influences the returned payment methods (the same server can be used for iOS, Android and Point of sale */

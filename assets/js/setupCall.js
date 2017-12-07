@@ -2,13 +2,6 @@ $(document).ready(function() {
 
     var showHint = false;
 
-    // Create styling object for securedFields, for more information: https://docs.adyen.com/developers/checkout-javascript-sdk/styling-input-fields
-    var hostedFieldStyle = {
-        base: {
-            fontSize: '16px'
-        }
-    };
-
     // Functionality around showing hint on how to configure the 'setup' call
     var explanationDiv = $('.explanation');
     explanationDiv.hide();
@@ -22,6 +15,49 @@ $(document).ready(function() {
     window.setTimeout(showExplanation, 4000);
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////// CONFIGURATION OF CHECKOUT /////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // Object which allows you to style the securedFields (Adyen hosted iframes) view all configurable style options here: https://docs.adyen.com/developers/checkout/web-sdk/custom-checkout-web
+    var securedFieldsStyles = {
+        base: {
+            fontSize: '16px'
+        },
+
+        error: {
+            color: 'red'
+        },
+
+        placeholder: {
+            color: '#d8d8d8'
+        },
+
+        validated: {
+            color: 'green'
+        }
+    };
+
+    // You are able to overwrite any language string per locale, by sending in a translationUbject see https://docs.adyen.com/developers/checkout/web-sdk/custom-checkout-web/translations
+    var translationObject = {
+        "paymentMethods.moreMethodsButton": {
+            "en-US" : "Other payment methods",
+            "nl-NL": "Meer opties"
+        }
+    };
+
+    // For a full reference of configurable options, view https://docs.adyen.com/developers/checkout/web-sdk/custom-checkout-web/sdk-configuration
+    var configurationObject = {
+        context : 'test',
+        translations: translationObject,
+        paymentMethods : {
+            card : {
+                sfStyles : securedFieldsStyles,
+                showOptionalHolderNameField: true
+            }
+        }
+    };
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////// INITIALIZE CHECKOUT ////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////////////////
     /**
@@ -32,7 +68,9 @@ $(document).ready(function() {
      * @param jsonResponseObject - the JSON response from the 'setup' call to the Adyen CheckoutAPI
      */
     function initiateCheckout(jsonResponse) {
-        var checkout = chckt.checkout(jsonResponse, '.checkout', hostedFieldStyle);
+        var checkout = chckt.checkout(jsonResponse, '.checkout', configurationObject);
+
+
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -52,6 +90,7 @@ $(document).ready(function() {
 
                 // Initialize checkout
                 initiateCheckout(data);
+
             }else{
 
                 // Show hint to set Merchant Account property etc
@@ -65,5 +104,4 @@ $(document).ready(function() {
             }
         }
     });
-
 });
