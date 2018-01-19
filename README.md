@@ -5,7 +5,7 @@ This PHP server example is intended to help developers to get quickly up and run
 Always ask a backend developer to create an implementation of our checkout product.
 
 ## Requirements
-To run this web checkout example, add the following file <b>config/authentication.ini</b> and create variables:<br/>
+To run this web checkout example, <b>add</b>  the following file <b>config/authentication.ini</b> and create variables:<br/>
 
 <b>merchantAccount</b>= "YOUR MERCHANT ACCOUNT".<br/>
 <b>checkoutAPIkey</b>= "YOUR CHECKOUT API KEY".<br/>
