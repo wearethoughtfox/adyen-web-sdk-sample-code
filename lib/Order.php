@@ -22,6 +22,10 @@
 /**
  * Set up / edit your order on this page
  * For more information, refer to the checkout API documentation: https://docs.adyen.com/developers/checkout/api-reference-checkout */
+
+
+
+
 class Order
 {
     /** @int value - Put the value into minor units 120 = 1.20 (for USD), for decimal information per currency see: https://docs.adyen.com/developers/currency-codes */
@@ -54,12 +58,22 @@ class Order
         return $this->shopperReference;
     }
 
-    /** @var $shopperLocale - The shopper locale : https://docs.adyen.com/developers/in-app-integration/checkout-api-reference/setup */
-    public $shopperLocale = 'en_US';
+    /** @var $shopperLocale - The shopper locale : https://docs.adyen.com/developers/in-app-integration/checkout-api-reference/setup
+
+    Supported languages: https://docs.adyen.com/developers/checkout/web-sdk/customization/translations
+     */
+
 
     public function getShopperLocale()
     {
-        return $this->shopperLocale;
+      parse_str($_SERVER["QUERY_STRING"], $query_array);
+      if (!empty($query_array['shopperLocale'])) {
+          $shopperLocale = $query_array['shopperLocale'];
+      } else {
+          $shopperLocale = "en_US";
+      }
+
+        return $shopperLocale;
     }
 
     /** @var $countryCode - The countryCode influences the returned payment methods */
