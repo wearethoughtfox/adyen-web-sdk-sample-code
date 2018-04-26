@@ -11,9 +11,12 @@
 * Recurring payments: https://docs.adyen.com/developers/features/recurring-payments
 
 ## Languages
-https://docs.adyen.com/developers/checkout/web-sdk/customization/translations
-add a query e.g. `?shopperLocale=zh-TW`
+* add a query e.g. `?shopperLocale=zh-TW`
+* See https://docs.adyen.com/developers/checkout/web-sdk/customization/translations
 
+## Country Code
+* add a query e.g. `&countryCode=NL`
+* A valid value is an ISO 2-character country code (e.g. 'NL').
 
 ## ! This repository is for demo purposes only !
 This PHP server example is intended to help developers to get quickly up and running with our Checkout JavaScript SDK.<br/>

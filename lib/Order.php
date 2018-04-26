@@ -72,16 +72,20 @@ class Order
       } else {
           $shopperLocale = "en_US";
       }
-
-        return $shopperLocale;
+      return $shopperLocale;
     }
 
     /** @var $countryCode - The countryCode influences the returned payment methods */
-    public $countryCode = 'FR';
 
     public function getCountryCode()
     {
-        return $this->countryCode;
+        parse_str($_SERVER["QUERY_STRING"], $query_array);
+        if (!empty($query_array['countryCode'])) {
+            $countryCode = $query_array['countryCode'];
+        } else {
+            $countryCode = "FR";
+        }
+        return $countryCode;
     }
 
     /** @var $channel - the channel influences the returned payment methods (the same server can be used for iOS, Android and Point of sale */
