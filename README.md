@@ -1,5 +1,20 @@
 # Checkout Web SDK server example
 
+## To find out
+- What are the options for different countries?
+- How to implement recurring payments?
+- Does it has a "shopping list"?
+
+## References
+* Web SDK instructions: https://docs.adyen.com/developers/checkout/web-sdk/quick-start-web/show-payment-form-web
+* Test cards: https://docs.adyen.com/developers/test-cards/test-card-numbers
+* Recurring payments: https://docs.adyen.com/developers/features/recurring-payments
+
+## Languages
+https://docs.adyen.com/developers/checkout/web-sdk/customization/translations
+add a query e.g. `?shopperLocale=zh-TW`
+
+
 ## ! This repository is for demo purposes only !
 This PHP server example is intended to help developers to get quickly up and running with our Checkout JavaScript SDK.<br/>
 Always ask a backend developer to create an implementation of our checkout product.
@@ -20,7 +35,7 @@ You can install this example in two ways:
 
 Use this shortcut to deploy to Heroku:<br/>
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Adyen/adyen-web-sdk-sample-code)
-  
+
 Alternatively, clone this repository and deploy it to your own PHP server.
 
 ## Documentation
