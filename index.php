@@ -1,4 +1,5 @@
 <?php
+
 /**
  *                       ######
  *                       ######
@@ -83,6 +84,7 @@ $setupData = json_encode($client->setup());
                 method: 'POST',// jQuery > 1.9
                 type: 'POST', //jQuery < 1.9
                 success: function (data) {
+
                     $("#checkout").html(data.authResponse);
                 },
                 error: function () {

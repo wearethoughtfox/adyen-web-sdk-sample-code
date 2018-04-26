@@ -51,6 +51,7 @@ class Client
             'merchantAccount' => $authentication['merchantAccount']
         );
         $data = json_encode($request);
+
         return $this->doPostRequest($url, $data, $authentication);
 
     }
@@ -65,6 +66,7 @@ class Client
     /** Set up the cURL call to  adyen */
     private function doPostRequest($url, $data, $authentication)
     {
+
         //  Initiate curl
         $curlAPICall = curl_init();
 
