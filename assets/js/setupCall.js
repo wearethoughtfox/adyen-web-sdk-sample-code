@@ -46,6 +46,7 @@ var translationObject = {
 // For a full reference of configurable options, view https://docs.adyen.com/developers/checkout/web-sdk/custom-checkout-web/sdk-configuration
 var configurationObject = {
     context: 'test',
+    consolidateCards: 'false',
     translations: translationObject,
     paymentMethods: {
         card: {
