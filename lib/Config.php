@@ -71,6 +71,8 @@ class Config
         if (!empty (getenv('MERCHANT_ACCOUNT')) && !empty(getenv('CHECKOUT_API_KEY'))) {
             $authentication['merchantAccount'] = getenv('MERCHANT_ACCOUNT');
             $authentication['checkoutAPIkey'] = getenv('CHECKOUT_API_KEY');
+            echo $authentication['merchantAccount'];
+            echo $authentication['checkoutAPIkey'];
         } else {
             if (file_exists(__DIR__ . '/../config/authentication.ini')) {
                 $authentication = parse_ini_file(__DIR__ . '/../config/authentication.ini', true);
