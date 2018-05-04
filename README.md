@@ -3,7 +3,6 @@
 ## To find out
 - What are the options for different countries?
 - How to implement recurring payments?
-- Does it has a "shopping list"?
 
 ## References
 * Web SDK instructions: https://docs.adyen.com/developers/checkout/web-sdk/quick-start-web/show-payment-form-web
