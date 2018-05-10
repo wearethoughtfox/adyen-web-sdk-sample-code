@@ -1,5 +1,7 @@
 # Checkout Web SDK server example
 
+Test login: https://ca-test.adyen.com/ca/ca/login.shtml
+
 ## To find out
 - What are the options for different countries?
 - How to implement recurring payments?

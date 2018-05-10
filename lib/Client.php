@@ -91,8 +91,11 @@ class Client
             )
         );
 
+
         // Execute
         $result = curl_exec($curlAPICall);
+
+        var_dump($result);
 
         // Closing
         curl_close($curlAPICall);
