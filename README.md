@@ -3,9 +3,10 @@
 Test login: https://ca-test.adyen.com/ca/ca/login.shtml
 
 IPs added:
-- RC Local: 151.231.24.62
-- RC Local: 176.127.233.196
-- RC https://amnesty-adyen-web-sdk-test.herokuapp.com: 51.179.153.42
+- RC Local: 151.231.24.62 - removed
+- RC Local: 176.127.233.196 - removed
+- RC https://amnesty-adyen-web-sdk-test.herokuapp.com: 54.173.229.200 and 54.175.230.252
+
 
 ## To find out
 - What are the options for different countries?
