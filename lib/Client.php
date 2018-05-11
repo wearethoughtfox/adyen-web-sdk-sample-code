@@ -50,6 +50,8 @@ class Client
 
             'merchantAccount' => $authentication['merchantAccount']
         );
+
+        var_dump($authentication);
         $data = json_encode($request);
 
         return $this->doPostRequest($url, $data, $authentication);
@@ -95,7 +97,7 @@ class Client
         // Execute
         $result = curl_exec($curlAPICall);
 
-        var_dump($result);
+
 
         // Closing
         curl_close($curlAPICall);

@@ -2,6 +2,11 @@
 
 Test login: https://ca-test.adyen.com/ca/ca/login.shtml
 
+IPs added:
+- RC Local: 151.231.24.62
+- RC Local: 176.127.233.196
+- RC https://amnesty-adyen-web-sdk-test.herokuapp.com: 51.179.153.42
+
 ## To find out
 - What are the options for different countries?
 - How to implement recurring payments?
