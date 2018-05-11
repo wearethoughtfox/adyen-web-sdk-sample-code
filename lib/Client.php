@@ -70,7 +70,7 @@ class Client
     {
 
         $fixieUrl = getenv('FIXIE_URL');
-        $parsedFixieUrl = parse_url('$fixieUrl');
+        $parsedFixieUrl = parse_url($fixieUrl);
 
         $proxy = $parsedFixieUrl['host'].":".$parsedFixieUrl['port'];
         $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
