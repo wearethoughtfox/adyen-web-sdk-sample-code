@@ -51,7 +51,7 @@ class Client
             'merchantAccount' => $authentication['merchantAccount']
         );
 
-        var_dump($authentication);
+       // var_dump($authentication);
         $data = json_encode($request);
 
         return $this->doPostRequest($url, $data, $authentication);
@@ -69,6 +69,12 @@ class Client
     private function doPostRequest($url, $data, $authentication)
     {
 
+        $fixieUrl = getenv('FIXIE_URL');
+        $parsedFixieUrl = parse_url($fixieUrl);
+
+        $proxy = $parsedFixieUrl['host'].":".$parsedFixieUrl['port'];
+        $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
+
         //  Initiate curl
         $curlAPICall = curl_init();
 
@@ -77,6 +83,10 @@ class Client
 
         // Will return the response, if false it print the response
         curl_setopt($curlAPICall, CURLOPT_RETURNTRANSFER, true);
+
+        curl_setopt($curlAPICall, CURLOPT_PROXY, $proxy);
+
+        curl_setopt($curlAPICall, CURLOPT_PROXYUSERPWD, $proxyAuth);
 
         // Add JSON message
         curl_setopt($curlAPICall, CURLOPT_POSTFIELDS, $data);
@@ -97,7 +107,7 @@ class Client
         // Execute
         $result = curl_exec($curlAPICall);
 
-
+        var_dump($result);
 
         // Closing
         curl_close($curlAPICall);
