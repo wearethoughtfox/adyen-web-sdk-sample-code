@@ -54,6 +54,8 @@ class Client
        // var_dump($authentication);
         $data = json_encode($request);
 
+        var_dump($request);
+
         return $this->doPostRequest($url, $data, $authentication);
 
     }

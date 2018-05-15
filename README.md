@@ -25,6 +25,12 @@ IPs added:
 * A valid value is an ISO 2-character country code (e.g. 'NL').
 * https://docs.adyen.com/developers/currency-codes
 
+## Currency
+* add a query e.g. `&currency=EUR`
+* Three character value
+* Some payment methods are limited to the currency, e.g. countryCode = NL, currencyCode= CNY << no IDEAL should be shown as it requires EUR.
+
+
 ## ! This repository is for demo purposes only !
 This PHP server example is intended to help developers to get quickly up and running with our Checkout JavaScript SDK.<br/>
 Always ask a backend developer to create an implementation of our checkout product.

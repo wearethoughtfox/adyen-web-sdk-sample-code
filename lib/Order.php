@@ -29,17 +29,25 @@
 class Order
 {
     /** @int value - Put the value into minor units 120 = 1.20 (for USD), for decimal information per currency see: https://docs.adyen.com/developers/currency-codes */
-    public $value = 120;
+   // public $value = 120;
 
     /** @var  $currencyCode - Change this to any currency you support: https://docs.adyen.com/developers/currency-codes */
-    public $currencyCode = 'USD';
+   // public $currencyCode = 'EUR';
 
     /** @array $amount - Amount is a combination of value and currency */
-    public $amount = ['value' => 120, 'currency' => "USD"];
+   // public $amount = ['value' => 120, 'currency' => 'EUR'];
 
     public function getAmount()
     {
-        return $this->amount;
+        parse_str($_SERVER["QUERY_STRING"], $query_array);
+      if (!empty($query_array['currency'])) {
+          $fetchedCurrency = $query_array['currency'];
+          echo $fetchedCurrency;
+          $amount = ['value' => 120, 'currency' => $fetchedCurrency];
+      } else {
+          $amount = ['value' => 120, 'currency' => 'EUR'];
+      }
+      return $amount;
     }
 
     /** @var $reference - order number */
@@ -82,8 +90,9 @@ class Order
         parse_str($_SERVER["QUERY_STRING"], $query_array);
         if (!empty($query_array['countryCode'])) {
             $countryCode = $query_array['countryCode'];
+            echo $countryCode;
         } else {
-            $countryCode = "FR";
+            $countryCode = "GB";
         }
         return $countryCode;
     }
