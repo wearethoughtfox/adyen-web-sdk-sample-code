@@ -3,9 +3,8 @@
 Test login: https://ca-test.adyen.com/ca/ca/login.shtml
 
 IPs added:
-- RC Local: 151.231.24.62 - removed
-- RC Local: 176.127.233.196 - removed
-- RC https://amnesty-adyen-web-sdk-test.herokuapp.com: 54.173.229.200 and 54.175.230.252
+- RC Local: 151.231.24.62
+- RC Local: 176.127.233.196
 
 
 ## To find out
@@ -24,6 +23,7 @@ IPs added:
 ## Country Code
 * add a query e.g. `&countryCode=NL`
 * A valid value is an ISO 2-character country code (e.g. 'NL').
+* https://docs.adyen.com/developers/currency-codes
 
 ## ! This repository is for demo purposes only !
 This PHP server example is intended to help developers to get quickly up and running with our Checkout JavaScript SDK.<br/>
