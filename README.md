@@ -6,7 +6,6 @@ IPs added:
 - RC Local: 151.231.24.62
 - RC Local: 176.127.233.196
 
-
 ## To find out
 - What are the options for different countries?
 - How to implement recurring payments?
@@ -30,6 +29,16 @@ IPs added:
 * Three character value
 * Some payment methods are limited to the currency, e.g. countryCode = NL, currencyCode= CNY << no IDEAL should be shown as it requires EUR.
 
+## Additional data
+See: https://docs.adyen.com/api-explorer/#/PaymentSetupAndVerificationService/v32/payments there’s a field called additionalData.
+
+"The additionalData object is a generic container that can hold extra request fields. You may require to pass these fields along with payment request data, for example, to better manage risky transactions or to initiate a payment using some local payment methods.
+
+This functionality is not enabled by default, as it requires additional configuration on Adyen's end. Contact the  Support Team to request enabling it for you."
+
+https://docs.adyen.com/developers/api-reference/payments-api#paymentrequestadditionaldata
+
+Pass it along with the other stuff as a (JSON) POST request to the /setup endpoint when initiate the payment session.
 
 ## ! This repository is for demo purposes only !
 This PHP server example is intended to help developers to get quickly up and running with our Checkout JavaScript SDK.<br/>
@@ -42,17 +51,6 @@ To run this web checkout example, <b>add</b>  the following file <b>config/authe
 <b>checkoutAPIkey</b>= "YOUR CHECKOUT API KEY".<br/>
 
 These variables can be found in Adyen Customer Area. For more information, visit our <a href="https://docs.adyen.com/developers/get-started-with-adyen/create-a-test-account">Getting Started guide</a>.<br/>
-
-## Installation
-
-### Deploying this example to Heroku
-
-You can install this example in two ways:
-
-Use this shortcut to deploy to Heroku:<br/>
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Adyen/adyen-web-sdk-sample-code)
-
-Alternatively, clone this repository and deploy it to your own PHP server.
 
 ## Documentation
 
